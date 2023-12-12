@@ -10,6 +10,8 @@ import { findAllTransaction } from "../services/transactions";
 import dayjs from "dayjs";
 import ErrorInput from "../components/ErrorInput";
 
+import { formatCurrency } from "../utils/formatCurrency";
+
 export default function Home() {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
@@ -98,7 +100,7 @@ export default function Home() {
                     }
                   `}
                   >
-                    R$ {transaction.value}
+                    {formatCurrency(transaction.value)}
                   </span>
                 </li>
               ))}
@@ -110,7 +112,7 @@ export default function Home() {
                     ${balance > 0 ? "text-green-700" : "text-red-700"}
                   `}
               >
-                R$ {balance}
+                {formatCurrency(balance)}
               </span>
             </li>
           </ul>
