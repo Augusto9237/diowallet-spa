@@ -68,7 +68,12 @@ export default function Home() {
       <header className="flex items-center justify-between w-full pb-4">
         <img src={logo} alt="Logo Dio Wallet" className="w-32" />
         <div className="flex items-center gap-4 text-white text-2xl">
-          <h1>Olá, {user.name}</h1>
+          <h1>
+            Olá,{" "}
+            <Link to="/profile" className="hover:text-sky-600">
+              {user.name}
+            </Link>
+          </h1>
           <Link to="/signin">
             <GoSignOut />
           </Link>

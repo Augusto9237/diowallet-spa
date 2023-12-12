@@ -7,6 +7,7 @@ import Signup from "./pages/Signup.jsx";
 import Home from "./pages/Home";
 import NewTransaction from "./pages/NewTransaction";
 import ErrorPage from "./pages/ErrorPage";
+import Profile from "./pages/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/transaction/:type",
     element: <NewTransaction />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
 ]);
 
