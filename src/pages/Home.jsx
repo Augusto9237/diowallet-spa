@@ -105,6 +105,7 @@ export default function Home() {
                     }
                   `}
                     >
+                      {transaction.type === "output" && "-"}
                       {formatCurrency(transaction.value)}
                     </span>
                   </li>

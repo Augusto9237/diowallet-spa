@@ -66,7 +66,9 @@ export default function TransictionDetails() {
 
                   <span>{transaction.description}</span>
 
-                  <span className="capitalize text-center">{transaction.type}</span>
+                  <span className="capitalize text-center">
+                    {transaction.type}
+                  </span>
 
                   <span
                     className={`text-end ${
@@ -76,6 +78,7 @@ export default function TransictionDetails() {
                     }
                   `}
                   >
+                    {transaction.type === "output" && "-"}
                     {formatCurrency(transaction.value)}
                   </span>
                 </div>
