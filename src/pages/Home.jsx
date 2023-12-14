@@ -62,6 +62,8 @@ export default function Home() {
     getAllTrasactions();
   }, []);
 
+  console.log(transactions);
+
   return (
     <main className="flex flex-col items-center justify-center bg-zinc-900 rounded p-8 w-[60rem] h-[35rem] text-2xl">
       {apiErrors && <ErrorInput text={apiErrors} />}
@@ -85,29 +87,28 @@ export default function Home() {
           <ul className="w-full h-full flex flex-col justify-between">
             <div className="h-[17rem] overflow-auto p-3">
               {transactions.map((transaction, index) => (
-                <li
-                  key={index}
-                  className="flex justify-between items-start w-full"
-                >
-                  <span className="flex items-center gap-2">
-                    <span className="text-base text-zinc-500">
-                      {dayjs(transaction.created_at).format("DD/MM")}
+                <Link to={`/details/${transaction._id}`} key={index}>
+                  <li className="flex justify-between items-start w-full hover:bg-zinc-400/75">
+                    <span className="flex items-center gap-2 ">
+                      <span className="text-base text-zinc-500">
+                        {dayjs(transaction.created_at).format("DD/MM")}
+                      </span>
+                      {transaction.description}
                     </span>
-                    {transaction.description}
-                  </span>
 
-                  <span
-                    className={`
+                    <span
+                      className={`
                     ${
                       transaction.type === "input"
                         ? "text-green-700"
                         : "text-red-700"
                     }
                   `}
-                  >
-                    {formatCurrency(transaction.value)}
-                  </span>
-                </li>
+                    >
+                      {formatCurrency(transaction.value)}
+                    </span>
+                  </li>
+                </Link>
               ))}
             </div>
             <li className="flex justify-between items-start w-full px-3 ">

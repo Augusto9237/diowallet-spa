@@ -8,12 +8,17 @@ import Home from "./pages/Home";
 import NewTransaction from "./pages/NewTransaction";
 import ErrorPage from "./pages/ErrorPage";
 import Profile from "./pages/Profile.jsx";
+import TransictionDetails from "./pages/TransictionDetails.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/details/:id",
+    element: <TransictionDetails />,
   },
   {
     path: "/signin",
