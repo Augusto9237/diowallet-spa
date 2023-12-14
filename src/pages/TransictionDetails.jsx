@@ -57,7 +57,7 @@ export default function TransictionDetails() {
               <div className="grid grid-cols-4 text-base text-zinc-500">
                 <span>Date</span>
                 <span>Description</span>
-                <span>Type</span>
+                <span className="text-center">Type</span>
                 <span className="text-center">Value</span>
               </div>
               {transactions.map((transaction, index) => (
@@ -66,7 +66,7 @@ export default function TransictionDetails() {
 
                   <span>{transaction.description}</span>
 
-                  <span className="capitalize">{transaction.type}</span>
+                  <span className="capitalize text-center">{transaction.type}</span>
 
                   <span
                     className={`text-end ${
