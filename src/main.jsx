@@ -9,6 +9,7 @@ import NewTransaction from "./pages/NewTransaction";
 import ErrorPage from "./pages/ErrorPage";
 import Profile from "./pages/Profile.jsx";
 import TransictionDetails from "./pages/TransictionDetails.jsx";
+import EditTransaction from "./pages/EditTransaction.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/transaction/:type",
     element: <NewTransaction />,
+  },
+  {
+    path: "/transaction/edit/:id",
+    element: <EditTransaction/>,
   },
   {
     path: "/profile",

@@ -18,3 +18,19 @@ export function createNewTransaction(body) {
 
   return response;
 }
+
+export function updateTransaction(id, body) {
+  const response = axios.patch(`${BASE_URL}/transactions/${id}`, body, {
+    headers: { Authorization: `Bearer ${Cookies.get("token")}` },
+  });
+
+  return response;
+}
+
+export function deleteTransiction(id) {
+  const response = axios.delete(`${BASE_URL}/transactions/${id}`, {
+    headers: { Authorization: `Bearer ${Cookies.get("token")}` },
+  });
+  console.log(response);
+  return response;
+}
